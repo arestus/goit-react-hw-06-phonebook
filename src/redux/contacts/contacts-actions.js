@@ -1,24 +1,13 @@
-import types from './contacts-types';
 import shortid from 'shortid';
+import { createAction } from '@reduxjs/toolkit';
 
-const addContact = (name, number) => ({
-  type: types.ADD,
-  payload: {
-    id: shortid.generate(),
-    name,
-    number,
-  },
+const addContact = createAction('contacts/Add', (name, number) => {
+  return {
+    payload: { id: shortid.generate(), name, number },
+  };
 });
-
-const deleteContact = todoId => ({
-  type: types.DELETE,
-  payload: todoId,
-});
-
-const ChangeFilter = value => ({
-  type: types.CHANGE_FILTER,
-  payload: value,
-});
+const deleteContact = createAction('contacts/Delete');
+const ChangeFilter = createAction('contacts/ChangeFilter');
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default { addContact, deleteContact, ChangeFilter };

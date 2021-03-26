@@ -1,7 +1,6 @@
 import React from 'react';
 import s from './List.module.css';
 import PropTypes from 'prop-types';
-// import shortid from 'shortid';
 import contactsActions from '../../redux/contacts/contacts-actions';
 import { connect } from 'react-redux';
 
@@ -42,20 +41,9 @@ const getVisibileContacts = (allContacts, filter) => {
   );
 };
 
-// const mapStateToProps = state => {
-//   const { filter, contacts } = state.contacts;
-
-//   const visibleContacts = getVisibileContacts(contacts, filter);
-//   return { contacts: visibleContacts };
-// };
-
 const mapStateToProps = ({ contacts: { contacts, filter } }) => ({
   contacts: getVisibileContacts(contacts, filter),
 });
-
-// const mapStateToProps = state => ({
-//   contacts: state.contacts.contacts,
-// });
 
 const mapDispatchToProps = dispatch => ({
   onDeleteContact: id => dispatch(contactsActions.deleteContact(id)),
