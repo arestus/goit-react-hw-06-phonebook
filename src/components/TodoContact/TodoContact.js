@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import s from './TodoContact.module.css';
-// import shortid from 'shortid';
 import { connect } from 'react-redux';
 import contactsActions from '../../redux/contacts/contacts-actions';
 

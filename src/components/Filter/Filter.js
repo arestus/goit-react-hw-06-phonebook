@@ -23,24 +23,6 @@ Filter.propTypes = {
   onChange: PropTypes.func.isRequired,
 };
 
-// const getVisibileContacts = (allContacts, filter) => {
-//   const normalizedFilter = filter.toLowerCase();
-//   return allContacts.filter(({ name }) =>
-//     name.toLowerCase().includes(normalizedFilter),
-//   );
-// };
-
-// const mapStateToProps = state => {
-//   const { filter, contacts } = state.contacts;
-
-//   const visibleContacts = getVisibileContacts(contacts, filter);
-//   return { contacts: visibleContacts };
-// };
-
-// const mapStateToProps = ({ contacts: { contacts, filter } }) => ({
-//   contacts: getVisibileContacts(contacts, filter),
-// });
-
 const mapStateToProps = state => ({
   value: state.contacts.filter,
 });
